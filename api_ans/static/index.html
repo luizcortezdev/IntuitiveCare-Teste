@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Operadoras</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="container">
+        <h1 class="mt-5">Digite o Nome da Operadora :</h1>
+        <div class="input-group mb-3">
+            <input type="text" v-model="query" class="form-control" placeholder="Digite o nome da operadora">
+            <div class="input-group-append">
+                <button @click="buscarOperadoras" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+        <ul class="listaOperadoras" id="listaOperadoras">
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                query: '',
+                operadoras: []
+            },
+            methods: {
+                buscarOperadoras() {
+                    fetch(`/buscar-operadoras?query=${this.query}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            this.operadoras = data;
+                            console.log(data);
+                            
+                            var listaOperadoras = document.getElementById("listaOperadoras");
+
+                            listaOperadoras.innerHTML = "";
+
+                            for (var i = 0; i < this.operadoras.length; i++) {
+                                var operadora = this.operadoras[i];
+                                var listItem = document.createElement("li");
+
+                                listItem.className = "list-group-item";                    
+                                listItem.innerHTML = "<strong>Razão Social: </strong>" + operadora.nome + "<br><strong>CNPJ: </strong>" + operadora.CNPJ;
+                                listaOperadoras.appendChild(listItem);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erro ao buscar operadoras:', error);
+                        });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
