@@ -6,10 +6,10 @@ import psycopg2
 app = FastAPI()
 
 conn = psycopg2.connect(
-    dbname='intuitive',
-    user='postgres',
-    password='2422',
-    host='localhost'
+    dbname='ans',
+    user='',
+    password='',
+    host='' #O Endpoint do Banco RDS da AWS
 )
 
 @app.get('/')
@@ -29,4 +29,4 @@ async def buscar_operadoras(query: str = Query(None)):
     return resultados
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="127.0.0.1", port=5000)
+    uvicorn.run(app, host="127.0.0.1", port=80)
