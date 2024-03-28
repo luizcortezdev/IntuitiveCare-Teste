@@ -5,10 +5,6 @@ import os
 import wget
 import boto3
 
-url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
-
-response = requests.get(url)
-
 client = boto3.client(
     service_name='s3',
     aws_access_key_id='',
@@ -16,13 +12,19 @@ client = boto3.client(
     region_name='us-east-1' 
 )
 
+url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
+
+response = requests.get(url)
+
 
 if response.status_code == 200:
     soup = BeautifulSoup(response.content, "html.parser")
     
     links = soup.find_all("a", href=True)
     
-    os.makedirs("pdfs", exist_ok=True)
+    if not os.path.exists("pdfs"):
+        os.makedirs("pdfs", exist_ok=True)
+
     pasta = 'pdfs'
     
     for link in links:
@@ -38,7 +40,7 @@ if response.status_code == 200:
     shutil.make_archive(caminho_zip, 'zip', caminho_pasta)
     shutil.rmtree(caminho_pasta)
 
-    client.upload_file("anexos.zip", "webscraping2", "anexos")
+    client.upload_file("anexos.zip", "webscraping", "anexos.zip")
 
 else:
     print("Página Fora do Ar!!")
