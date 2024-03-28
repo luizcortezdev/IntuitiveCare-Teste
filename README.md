@@ -3,8 +3,67 @@
 Repositorio criado para disponibilizar minha resolução do teste de nivelamento para estagia na area de engenharia de software na IntuitiveCare
 
 
+### Teste de API com Vue.js e Python
 
-### Atividade 1 - WEB SCRAPING COM PYTHON:
+O Objetivo sera desenvolver uma interface web interativa utilizando Vue.js que se comunique com um servidor em Python para realizar operações de busca textual na lista de cadastros de operadoras, conforme preparado anteriormente. Além disso, sera feito o deploy desta aplicação em um ambiente de nuvem da AWS, usando um servidor EC2 e um banco de dados Postgres dentro da AWS pelo RDS!
+
+Link para API: https://bit.ly/operadoras_ans
+Documentação da API em /docs do site!!
+
+##### REQUISITOS: 
+
+- Conta AWS
+- Maquina EC2 Ubuntu
+- Acesso SSH a maquina
+- Banco de dados RDS da postgres
+
+Certifique-se de ter as seguintes bibliotecas python instaladas:
+
+`fastapi`
+`uvicorn`
+`psycopg2`
+
+
+
+##### VPC:
+
+Crie uma vpc com 2 subnets publicas e 2 subnets privadas
+
+
+
+##### Firewall:
+
+Configure o security group da maquina ec2, liberando o trafego de entrada para as portas 80(http) e 22(ssh)
+Configure o security group do banco RDS, liberando o trafego de entrada para as porta 5432(postgresql) apenas para o security group da maquina ec2!!
+Atenção: nao libere o acesso publico ao banco!!!
+
+
+
+##### Configuração EC2:
+
+Crie uma maquina ubuntu ec2 com o seguinte user data:
+
+```
+#!/bin/bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install python3 python3-pip -y
+sudo pip3 install fastapi uvicorn psycopg2
+sudo apt install git
+sudo git clone https://github.com/luizcortezdev/IntuitiveCare-Teste
+
+```
+Acesse a pasta API no repositorio clonado
+
+suba o servidor com o comando:
+
+```
+python3 app.py
+```
+Teste usando o dns da maquina ec2
+
+
+### WEB SCRAPING COM PYTHON:
 
 O objetivo deste teste é demonstrar a capacidade de realizar web scraping utilizando as linguagens Python ou Java. O código desenvolvido deve automatizar as seguintes tarefas:
 
@@ -50,7 +109,7 @@ pip install requests beautifulsoup4 wget boto3
 
 
 
-### Atividade 2 - TRANSFORMAÇÃO DE DADOS EM TABELA PDF PARA TABELA CSV:
+### TRANSFORMAÇÃO DE DADOS EM TABELA PDF PARA TABELA CSV:
 
 O Objetivo principal dessa atividade é um código em Python que extraia uma Tabela de um arquivo PDF, transforme os dados, estruture em um formato legível e compacte-a em CSV para facilitar o armazenamento e compartilhamento, apos isso, upe o arquivo csv para um Bucket S3 na nuvem AWS.
 
@@ -79,7 +138,7 @@ Certifique-se de ter as seguintes bibliotecas python instaladas:
 
 
 
-### Atividade 3 - CONVERSÃO DE TABELA CSV PARA BANCO DE DADOS:
+### CONVERSÃO DE TABELA CSV PARA BANCO DE DADOS:
 
 O objetivo deste teste é transformar algumas tabelas CSV das operadoras registradas na ans em uma tabela de banco de dados utilizando PostgreSQL
 
@@ -205,75 +264,6 @@ LIMIT 10;
 
 ```
 Nota: Certifique-se de ajustar os caminhos dos arquivos CSV e adaptar as consultas conforme necessário para o seu ambiente de banco de dados.
-
-
-
-
-
-### Atividade 4 - Teste de API com Vue.js e Python
-
-O Objetivo sera desenvolver uma interface web interativa utilizando Vue.js que se comunique com um servidor em Python para realizar operações de busca textual na lista de cadastros de operadoras, conforme preparado anteriormente. Além disso, sera feito o deploy desta aplicação em um ambiente de nuvem da AWS, usando um servidor EC2 e um banco de dados Postgres dentro da AWS pelo RDS!
-
-
-##### REQUISITOS: 
-
-- Conta AWS
-- Maquina EC2 Ubuntu
-- Acesso SSH a maquina
-- Banco de dados RDS da postgres
-
-Certifique-se de ter as seguintes bibliotecas python instaladas:
-
-`fastapi`
-`uvicorn`
-`psycopg2`
-
-
-
-##### VPC:
-
-Crie uma vpc com 2 subnets publicas e 2 subnets privadas
-
-
-
-##### Firewall:
-
-Configure o security group da maquina ec2, liberando o trafego de entrada para as portas 80(http) e 22(ssh)
-Configure o security group do banco RDS, liberando o trafego de entrada para as porta 5432(postgresql) apenas para o security group da maquina ec2!!
-Atenção: nao libere o acesso publico ao banco!!!
-
-
-
-##### Configuração EC2:
-
-Crie uma maquina ubuntu ec2 com o seguinte user data:
-
-```
-#!/bin/bash
-sudo apt update
-sudo apt upgrade -y
-sudo apt install python3 python3-pip -y
-sudo pip3 install fastapi uvicorn psycopg2
-sudo apt install git
-sudo git clone https://github.com/luizcortezdev/IntuitiveCare-Teste
-
-```
-Acesse a pasta API no repositorio clonado
-
-suba o servidor com o comando:
-
-```
-python3 app.py
-```
-Teste usando o dns da maquina ec2
-
-
-
-
-
-
-
-
 
 
 
