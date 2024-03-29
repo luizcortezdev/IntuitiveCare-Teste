@@ -7,7 +7,8 @@ Repositorio criado para disponibilizar minha resolução do teste de nivelamento
 
 O Objetivo sera desenvolver uma interface web interativa utilizando Vue.js que se comunique com um servidor em Python para realizar operações de busca textual na lista de cadastros de operadoras, conforme preparado anteriormente. Além disso, sera feito o deploy desta aplicação em um ambiente de nuvem da AWS, usando um servidor EC2 e um banco de dados Postgres dentro da AWS pelo RDS!
 
-Link para API: https://bit.ly/operadoras_ans
+Link para API: https://bit.ly/operadoras_ans 
+
 Documentação da API em /docs do site!!
 
 ##### REQUISITOS: 
