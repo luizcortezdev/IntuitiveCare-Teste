@@ -66,7 +66,7 @@ Teste usando o dns da maquina ec2
 
 ### WEB SCRAPING COM PYTHON:
 
-O objetivo deste teste é demonstrar a capacidade de realizar web scraping utilizando as linguagens Python ou Java. O código desenvolvido deve automatizar as seguintes tarefas:
+O objetivo deste teste é demonstrar a capacidade de realizar web scraping utilizando as linguagens Python ou Java e + o Upload na nuvem da AWS. O código desenvolvido deve automatizar as seguintes tarefas:
 
 - Acesso ao site: https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos
 
