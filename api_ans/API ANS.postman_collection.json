@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "77da378c-ed49-4594-8c12-9a8f845bd5b5",
+		"name": "API ANS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33859172"
+	},
+	"item": [
+		{
+			"name": "BUSCA POR REGISTRO ANS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-34-230-204-73.compute-1.amazonaws.com/buscar-registro/421421",
+					"protocol": "http",
+					"host": [
+						"ec2-34-230-204-73",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"buscar-registro",
+						"421421"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BUSCA POR NOME DA OPERADORA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-34-230-204-73.compute-1.amazonaws.com/buscar-nome/caixa",
+					"protocol": "http",
+					"host": [
+						"ec2-34-230-204-73",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"buscar-nome",
+						"caixa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DOCUMENTAÇÂO DA API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-34-230-204-73.compute-1.amazonaws.com/docs",
+					"protocol": "http",
+					"host": [
+						"ec2-34-230-204-73",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"docs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
