@@ -1,6 +1,6 @@
 # Teste de Alinhamento IntuitiveCare
 
-Repositorio criado para disponibilizar minha resolução do teste de nivelamento para estagia na area de engenharia de software na IntuitiveCare
+Repositorio criado para disponibilizar minha resolução do teste de nivelamento para estagio na area de engenharia de software na IntuitiveCare
 
 
 ### Teste de API com Vue.js e Python
