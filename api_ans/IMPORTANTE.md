@@ -1,8 +1,8 @@
 API Totalmente hospedada na nuvem:
 
-Banco de dados RDS pela aws
-Interface Vue.js em um bucket S3
-servidor python em uma maquina ec2
+1. Banco de dados RDS pela aws
+2. Interface Vue.js em um bucket S3
+3. servidor python em uma maquina ec2
 
 Link para a api: https://bit.ly/operadoras_ans
 
