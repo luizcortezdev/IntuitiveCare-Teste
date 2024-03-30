@@ -29,7 +29,7 @@ async def index():
     return HTMLResponse(content=html_content, status_code=200)
 
 
-@app.get('/buscar-operadoras') # Rota para busca textual em interface vue.js
+@app.get('/buscar-operadoras') # Rota para busca textual por interface vue.js
 async def buscar_operadoras(query: str = Query(None)):
     if query is None:
         return []
