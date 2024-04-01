@@ -5,7 +5,7 @@ Repositorio criado para disponibilizar minha resolução do teste de nivelamento
 
 ### Teste de API com Vue.js e Python
 
-O Objetivo sera desenvolver uma interface web interativa utilizando Vue.js que se comunique com um servidor em Python para realizar operações de busca textual na lista de cadastros de operadoras, conforme preparado anteriormente. Além disso, sera feito o deploy desta aplicação em um ambiente de nuvem da AWS, usando um servidor EC2 e um banco de dados Postgres dentro da AWS pelo RDS!
+O Objetivo sera desenvolver uma interface web interativa utilizando Vue.js que se comunique com um servidor em Python para realizar operações de busca textual na lista de cadastros de operadoras, conforme preparado anteriormente. Além disso, sera feito o deploy desta aplicação em um ambiente de nuvem da AWS, usando um bucket S3 para a interface vue.js, um servidor EC2 para o servidor python e um banco de dados Postgres dentro da AWS pelo RDS!
 
 Link para API: https://bit.ly/operadoras_ans 
 
@@ -17,6 +17,8 @@ Documentação da API em /docs do site!!
 - Maquina EC2 Ubuntu
 - Acesso SSH a maquina
 - Banco de dados RDS da postgres
+- Bucket S3
+- User IAM com Privilegios S3
 
 Certifique-se de ter as seguintes bibliotecas python instaladas:
 
@@ -31,6 +33,8 @@ Certifique-se de ter as seguintes bibliotecas python instaladas:
 Crie uma vpc com 2 subnets publicas e 2 subnets privadas
 
 
+##### S3:
+Crie um Bucket S3 e faça o upload do arquivo index.html para dentro dele
 
 ##### Firewall:
 
